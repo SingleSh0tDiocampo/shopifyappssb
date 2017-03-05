@@ -28,6 +28,7 @@
         shopOrigin: "<%= "https://#{ @shop_session.url }" if @shop_session %>",
         debug: <%= Rails.env.development? ? 'true' : 'false' %>,
         forceRedirect: true
+        forceRedirect: <%= Rails.env.development? || Rails.env.test? ? 'false' : 'true' %>
       });
     </script>
 
